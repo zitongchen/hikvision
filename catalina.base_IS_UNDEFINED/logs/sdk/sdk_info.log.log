@@ -1,0 +1,117 @@
+.2019-03-19 19:19:37.714 com.jxbd.hikvision.HikvisionApplication INFO - Starting HikvisionApplication on PC-20180929LJHO with PID 16484 (D:\workspace\IdeaWorkspace\ARM\jxConch\hikvision\target\classes started by Administrator in D:\workspace\IdeaWorkspace\ARM\jxConch\hikvision)
+.2019-03-19 19:19:37.715 com.jxbd.hikvision.HikvisionApplication INFO - No active profile set, falling back to default profiles: default
+.2019-03-19 19:19:37.888 org.hibernate.validator.internal.util.Version INFO - HV000001: Hibernate Validator 5.3.6.Final
+.2019-03-19 19:19:37.998 org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext INFO - Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@22629495: startup date [Tue Mar 19 19:19:37 CST 2019]; root of context hierarchy
+.2019-03-19 19:19:39.530 org.springframework.boot.context.embedded.tomcat.TomcatEmbeddedServletContainer INFO - Tomcat initialized with port(s): 50000 (http)
+.2019-03-19 19:19:39.548 org.apache.coyote.http11.Http11NioProtocol INFO - Initializing ProtocolHandler ["http-nio-50000"]
+.2019-03-19 19:19:39.583 org.apache.catalina.core.StandardService INFO - Starting service [Tomcat]
+.2019-03-19 19:19:39.584 org.apache.catalina.core.StandardEngine INFO - Starting Servlet Engine: Apache Tomcat/8.5.37
+.2019-03-19 19:19:39.703 org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] INFO - Initializing Spring embedded WebApplicationContext
+.2019-03-19 19:19:39.704 org.springframework.web.context.ContextLoader INFO - Root WebApplicationContext: initialization completed in 1709 ms
+.2019-03-19 19:19:39.892 org.springframework.boot.web.servlet.ServletRegistrationBean INFO - Mapping servlet: 'dispatcherServlet' to [/]
+.2019-03-19 19:19:39.898 org.springframework.boot.web.servlet.FilterRegistrationBean INFO - Mapping filter: 'characterEncodingFilter' to: [/*]
+.2019-03-19 19:19:39.899 org.springframework.boot.web.servlet.FilterRegistrationBean INFO - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+.2019-03-19 19:19:39.899 org.springframework.boot.web.servlet.FilterRegistrationBean INFO - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+.2019-03-19 19:19:39.899 org.springframework.boot.web.servlet.FilterRegistrationBean INFO - Mapping filter: 'requestContextFilter' to: [/*]
+.2019-03-19 19:19:39.961 org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext WARN - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'applicationAutoRunner': Unsatisfied dependency expressed through field 'hikvisionService'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.jxbd.hikvision.population.density.HikvisionService' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+.2019-03-19 19:19:39.964 org.apache.catalina.core.StandardService INFO - Stopping service [Tomcat]
+.2019-03-19 19:19:39.980 org.springframework.boot.autoconfigure.logging.AutoConfigurationReportLoggingInitializer INFO - 
+
+Error starting ApplicationContext. To display the auto-configuration report re-run your application with 'debug' enabled.
+.2019-03-19 19:19:40.210 org.springframework.boot.diagnostics.LoggingFailureAnalysisReporter ERROR - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field hikvisionService in com.jxbd.hikvision.ApplicationAutoRunner required a bean of type 'com.jxbd.hikvision.population.density.HikvisionService' that could not be found.
+
+
+Action:
+
+Consider defining a bean of type 'com.jxbd.hikvision.population.density.HikvisionService' in your configuration.
+
+.2019-03-19 19:20:07.972 com.jxbd.hikvision.HikvisionApplication INFO - Starting HikvisionApplication on PC-20180929LJHO with PID 17612 (D:\workspace\IdeaWorkspace\ARM\jxConch\hikvision\target\classes started by Administrator in D:\workspace\IdeaWorkspace\ARM\jxConch\hikvision)
+.2019-03-19 19:20:07.973 com.jxbd.hikvision.HikvisionApplication INFO - No active profile set, falling back to default profiles: default
+.2019-03-19 19:20:08.105 org.hibernate.validator.internal.util.Version INFO - HV000001: Hibernate Validator 5.3.6.Final
+.2019-03-19 19:20:08.167 org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext INFO - Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@47e7baff: startup date [Tue Mar 19 19:20:08 CST 2019]; root of context hierarchy
+.2019-03-19 19:20:09.322 org.springframework.boot.context.embedded.tomcat.TomcatEmbeddedServletContainer INFO - Tomcat initialized with port(s): 50000 (http)
+.2019-03-19 19:20:09.333 org.apache.coyote.http11.Http11NioProtocol INFO - Initializing ProtocolHandler ["http-nio-50000"]
+.2019-03-19 19:20:09.345 org.apache.catalina.core.StandardService INFO - Starting service [Tomcat]
+.2019-03-19 19:20:09.345 org.apache.catalina.core.StandardEngine INFO - Starting Servlet Engine: Apache Tomcat/8.5.37
+.2019-03-19 19:20:09.429 org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] INFO - Initializing Spring embedded WebApplicationContext
+.2019-03-19 19:20:09.429 org.springframework.web.context.ContextLoader INFO - Root WebApplicationContext: initialization completed in 1265 ms
+.2019-03-19 19:20:09.575 org.springframework.boot.web.servlet.ServletRegistrationBean INFO - Mapping servlet: 'dispatcherServlet' to [/]
+.2019-03-19 19:20:09.580 org.springframework.boot.web.servlet.FilterRegistrationBean INFO - Mapping filter: 'characterEncodingFilter' to: [/*]
+.2019-03-19 19:20:09.581 org.springframework.boot.web.servlet.FilterRegistrationBean INFO - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+.2019-03-19 19:20:09.581 org.springframework.boot.web.servlet.FilterRegistrationBean INFO - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+.2019-03-19 19:20:09.581 org.springframework.boot.web.servlet.FilterRegistrationBean INFO - Mapping filter: 'requestContextFilter' to: [/*]
+.2019-03-19 19:20:09.948 org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter INFO - Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@47e7baff: startup date [Tue Mar 19 19:20:08 CST 2019]; root of context hierarchy
+.2019-03-19 19:20:10.004 org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping INFO - Mapped "{[/hikvisionSystem/previewURL],methods=[GET]}" onto public java.lang.String com.jxbd.hikvision.demo.HikvisionSystemController.previewURL(java.lang.String,java.lang.String)
+.2019-03-19 19:20:10.005 org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping INFO - Mapped "{[/hikvisionSystem/manualCapture],methods=[GET]}" onto public java.lang.String com.jxbd.hikvision.demo.HikvisionSystemController.manualCapture(java.lang.String)
+.2019-03-19 19:20:10.006 org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping INFO - Mapped "{[/hikvision],methods=[GET]}" onto public java.lang.String com.jxbd.hikvision.population.density.HikvisionController.index()
+.2019-03-19 19:20:10.007 org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping INFO - Mapped "{[/hikvision/arming],methods=[POST]}" onto public java.util.Map<java.lang.String, java.lang.String> com.jxbd.hikvision.population.density.HikvisionController.Arming(java.lang.String,java.lang.Short,java.lang.String,java.lang.String)
+.2019-03-19 19:20:10.007 org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping INFO - Mapped "{[/hikvision/closeAlarm],methods=[GET]}" onto public java.util.Map<java.lang.String, java.lang.String> com.jxbd.hikvision.population.density.HikvisionController.closeAlarm(java.lang.String)
+.2019-03-19 19:20:10.009 org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping INFO - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+.2019-03-19 19:20:10.009 org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping INFO - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+.2019-03-19 19:20:10.042 org.springframework.web.servlet.handler.SimpleUrlHandlerMapping INFO - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+.2019-03-19 19:20:10.042 org.springframework.web.servlet.handler.SimpleUrlHandlerMapping INFO - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+.2019-03-19 19:20:10.077 org.springframework.web.servlet.handler.SimpleUrlHandlerMapping INFO - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+.2019-03-19 19:20:10.523 org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer INFO - LiveReload server is running on port 35729
+.2019-03-19 19:20:10.629 org.springframework.jmx.export.annotation.AnnotationMBeanExporter INFO - Registering beans for JMX exposure on startup
+.2019-03-19 19:20:10.640 org.apache.coyote.http11.Http11NioProtocol INFO - Starting ProtocolHandler ["http-nio-50000"]
+.2019-03-19 19:20:10.652 org.apache.tomcat.util.net.NioSelectorPool INFO - Using a shared selector for servlet write/read
+.2019-03-19 19:20:10.664 org.springframework.boot.context.embedded.tomcat.TomcatEmbeddedServletContainer INFO - Tomcat started on port(s): 50000 (http)
+.2019-03-19 19:20:10.762 com.jxbd.hikvision.population.density.HikvisionService INFO - 海康摄像头注册成功，IP: 192.168.4.27
+.2019-03-19 19:20:10.797 com.jxbd.hikvision.population.density.HikvisionService INFO - 海康摄像头布防成功，IP: 192.168.4.27
+.2019-03-19 19:20:10.860 com.jxbd.hikvision.population.density.HikvisionService INFO - 海康摄像头注册成功，IP: 192.168.11.105
+.2019-03-19 19:20:10.864 com.jxbd.hikvision.population.density.HikvisionService INFO - 海康摄像头布防成功，IP: 192.168.11.105
+.2019-03-19 19:20:10.920 com.jxbd.hikvision.population.density.HikvisionService INFO - 海康摄像头注册成功，IP: 192.168.11.106
+.2019-03-19 19:20:10.925 com.jxbd.hikvision.population.density.HikvisionService INFO - 海康摄像头布防成功，IP: 192.168.11.106
+.2019-03-19 19:20:10.981 com.jxbd.hikvision.population.density.HikvisionService INFO - 海康摄像头注册成功，IP: 192.168.11.208
+.2019-03-19 19:20:10.985 com.jxbd.hikvision.population.density.HikvisionService INFO - 海康摄像头布防成功，IP: 192.168.11.208
+.2019-03-19 19:20:11.041 com.jxbd.hikvision.population.density.HikvisionService INFO - 海康摄像头注册成功，IP: 192.168.11.209
+.2019-03-19 19:20:11.045 com.jxbd.hikvision.population.density.HikvisionService INFO - 海康摄像头布防成功，IP: 192.168.11.209
+.2019-03-19 19:20:11.047 com.jxbd.hikvision.HikvisionApplication INFO - Started HikvisionApplication in 3.548 seconds (JVM running for 4.58)
+.2019-03-19 19:33:57.612 com.jxbd.hikvision.HikvisionApplication INFO - Starting HikvisionApplication on PC-20180929LJHO with PID 6940 (D:\workspace\IdeaWorkspace\ARM\jxConch\hikvision\target\classes started by Administrator in D:\workspace\IdeaWorkspace\ARM\jxConch\hikvision)
+.2019-03-19 19:33:57.613 com.jxbd.hikvision.HikvisionApplication INFO - No active profile set, falling back to default profiles: default
+.2019-03-19 19:33:57.795 org.hibernate.validator.internal.util.Version INFO - HV000001: Hibernate Validator 5.3.6.Final
+.2019-03-19 19:33:57.882 org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext INFO - Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@6f7c8e5c: startup date [Tue Mar 19 19:33:57 CST 2019]; root of context hierarchy
+.2019-03-19 19:33:59.363 org.springframework.boot.context.embedded.tomcat.TomcatEmbeddedServletContainer INFO - Tomcat initialized with port(s): 50000 (http)
+.2019-03-19 19:33:59.376 org.apache.coyote.http11.Http11NioProtocol INFO - Initializing ProtocolHandler ["http-nio-50000"]
+.2019-03-19 19:33:59.388 org.apache.catalina.core.StandardService INFO - Starting service [Tomcat]
+.2019-03-19 19:33:59.389 org.apache.catalina.core.StandardEngine INFO - Starting Servlet Engine: Apache Tomcat/8.5.37
+.2019-03-19 19:33:59.490 org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] INFO - Initializing Spring embedded WebApplicationContext
+.2019-03-19 19:33:59.491 org.springframework.web.context.ContextLoader INFO - Root WebApplicationContext: initialization completed in 1613 ms
+.2019-03-19 19:33:59.700 org.springframework.boot.web.servlet.ServletRegistrationBean INFO - Mapping servlet: 'dispatcherServlet' to [/]
+.2019-03-19 19:33:59.704 org.springframework.boot.web.servlet.FilterRegistrationBean INFO - Mapping filter: 'characterEncodingFilter' to: [/*]
+.2019-03-19 19:33:59.705 org.springframework.boot.web.servlet.FilterRegistrationBean INFO - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+.2019-03-19 19:33:59.705 org.springframework.boot.web.servlet.FilterRegistrationBean INFO - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+.2019-03-19 19:33:59.705 org.springframework.boot.web.servlet.FilterRegistrationBean INFO - Mapping filter: 'requestContextFilter' to: [/*]
+.2019-03-19 19:34:00.121 org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter INFO - Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@6f7c8e5c: startup date [Tue Mar 19 19:33:57 CST 2019]; root of context hierarchy
+.2019-03-19 19:34:00.186 org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping INFO - Mapped "{[/hikvision],methods=[GET]}" onto public java.lang.String com.jxbd.hikvision.population.density.HikvisionController.index()
+.2019-03-19 19:34:00.189 org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping INFO - Mapped "{[/hikvision/closeAlarm],methods=[GET]}" onto public java.util.Map<java.lang.String, java.lang.String> com.jxbd.hikvision.population.density.HikvisionController.closeAlarm(java.lang.String)
+.2019-03-19 19:34:00.189 org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping INFO - Mapped "{[/hikvision/arming],methods=[POST]}" onto public java.util.Map<java.lang.String, java.lang.String> com.jxbd.hikvision.population.density.HikvisionController.Arming(java.lang.String,java.lang.Short,java.lang.String,java.lang.String)
+.2019-03-19 19:34:00.191 org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping INFO - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+.2019-03-19 19:34:00.192 org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping INFO - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+.2019-03-19 19:34:00.226 org.springframework.web.servlet.handler.SimpleUrlHandlerMapping INFO - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+.2019-03-19 19:34:00.226 org.springframework.web.servlet.handler.SimpleUrlHandlerMapping INFO - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+.2019-03-19 19:34:00.266 org.springframework.web.servlet.handler.SimpleUrlHandlerMapping INFO - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+.2019-03-19 19:34:00.761 org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer INFO - LiveReload server is running on port 35729
+.2019-03-19 19:34:00.872 org.springframework.jmx.export.annotation.AnnotationMBeanExporter INFO - Registering beans for JMX exposure on startup
+.2019-03-19 19:34:00.886 org.apache.coyote.http11.Http11NioProtocol INFO - Starting ProtocolHandler ["http-nio-50000"]
+.2019-03-19 19:34:00.904 org.apache.tomcat.util.net.NioSelectorPool INFO - Using a shared selector for servlet write/read
+.2019-03-19 19:34:00.917 org.springframework.boot.context.embedded.tomcat.TomcatEmbeddedServletContainer INFO - Tomcat started on port(s): 50000 (http)
+.2019-03-19 19:34:01.020 com.jxbd.hikvision.population.density.HikvisionService INFO - 海康摄像头注册成功，IP: 192.168.4.27
+.2019-03-19 19:34:01.064 com.jxbd.hikvision.population.density.HikvisionService INFO - 海康摄像头布防成功，IP: 192.168.4.27
+.2019-03-19 19:34:01.131 com.jxbd.hikvision.population.density.HikvisionService INFO - 海康摄像头注册成功，IP: 192.168.11.105
+.2019-03-19 19:34:01.145 com.jxbd.hikvision.population.density.HikvisionService INFO - 海康摄像头布防成功，IP: 192.168.11.105
+.2019-03-19 19:34:01.209 com.jxbd.hikvision.population.density.HikvisionService INFO - 海康摄像头注册成功，IP: 192.168.11.106
+.2019-03-19 19:34:01.227 com.jxbd.hikvision.population.density.HikvisionService INFO - 海康摄像头布防成功，IP: 192.168.11.106
+.2019-03-19 19:34:01.297 com.jxbd.hikvision.population.density.HikvisionService INFO - 海康摄像头注册成功，IP: 192.168.11.208
+.2019-03-19 19:34:01.302 com.jxbd.hikvision.population.density.HikvisionService INFO - 海康摄像头布防成功，IP: 192.168.11.208
+.2019-03-19 19:34:01.372 com.jxbd.hikvision.population.density.HikvisionService INFO - 海康摄像头注册成功，IP: 192.168.11.209
+.2019-03-19 19:34:01.388 com.jxbd.hikvision.population.density.HikvisionService INFO - 海康摄像头布防成功，IP: 192.168.11.209
+.2019-03-19 19:34:01.390 com.jxbd.hikvision.HikvisionApplication INFO - Started HikvisionApplication in 4.22 seconds (JVM running for 6.76)

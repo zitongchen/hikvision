@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>海康威视首页</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+</head>
+<body>
+<form id="visionMessage">
+    <label>IP</label><input id="ip" name="ip" value="192.168.0.249">
+    <label>端口号</label><input name="port" value="8000">
+    <label>账号</label><input name="account" value="admin">
+    <label>密码</label><input type="password" name="password" value="kingxin2019">
+    <input type="button" onclick="submitVisionMessage()" value="布防">
+</form>
+<button onclick="closeAlarm()">撤防</button>
+</body>
+<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+<script>
+
+    function submitVisionMessage() {
+        console.log($("#visionMessage").serialize())
+        $.ajax({
+            url:"arming",
+            type:"POST",
+            data: $("#visionMessage").serialize(),
+            success:function (res) {
+                console.log(res)
+            },
+            error:function (error) {
+                console.log("error" + error)
+            }
+        })
+    }
+
+    function closeAlarm() {
+        $.ajax({
+            url:"closeAlarm",
+            type:"GET",
+            data:{ip: $("#ip").val()},
+            success:function (res) {
+                console.log(res)
+            }
+        })
+    }
+
+</script>
+</html>

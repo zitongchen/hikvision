@@ -1,0 +1,66 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>欢迎页</title>
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <link rel="stylesheet" th:href="@{css/bootstrap.min.css}">
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <script th:src="@{/js/jquery-2.2.3.min.js}"></script>
+    <link rel="stylesheet" th:href="@{/js/video-js-5.19.2/video-js.css}"/>
+    <script th:src="@{/js/video-js-5.19.2/video.js}"></script>
+</head>
+<body >
+
+<div class="wrapper">
+    <div class="content-wrapper">
+        <section class="content">
+            <div class="player-wrapper" style="margin:0 auto;width:80%;position:relative;">
+
+                <div class="video-wrapper" style="padding-bottom:55%;position:relative;margin:0 auto;">
+                    <div class="video-inner" style="position:absolute;top:0;bottom:0;left:0;right:0;">
+                        <video id="videojs" class="video-js vjs-default-skin vjs-big-play-centered" style="width: 50%; height: 50%;" controls preload="none"
+                               poster="" x5-video-player-fullscreen=”true”，x5-video-player-type=”h5”>
+                            <source src="rtmp://192.168.11.251:1935/live/openUrl/gjHjmTu" type="rtmp/mp4"></source>
+                            <p class="vjs-no-js">
+                                To view this video please enable JavaScript, and consider upgrading to a web browser that
+                                <a href="http://videojs.com/html5-video-support/" target="_blank">
+                                    supports HTML5 video
+                                </a>
+                            </p>
+                        </video>
+                    </div>
+                </div>
+            </div>
+
+            <!-- wrapper-->
+            <script>
+                videojs.options.flash.swf = '../static/js/video-js-5.19.2/video-js-fixed.swf';
+                videojs.options.techOrder = ['html5','flash'];
+                var player = null;
+
+                player = videojs("videojs",{
+                    notSupportedMessage : '您的浏览器没有安装或开启Flash,戳我开启！',
+                    techOrder : ["flash"],
+                    autoplay : true
+                });
+                player.on("error",function(e){
+                    var $e = $(".vjs-error .vjs-error-display .vjs-modal-dialog-content");
+                    var $a = $("<a href='http://www.adobe.com/go/getflashplayer' target='_blank'></a>").text($e.text());
+                    $e.empty().append($a);
+                });
+
+            </script>
+        </section>
+    </div>
+
+</div>
+<!-- wrapper-->
+</body>
+
+</html>

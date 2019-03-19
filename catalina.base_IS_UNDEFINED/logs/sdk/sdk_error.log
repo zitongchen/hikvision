@@ -1,0 +1,15 @@
+.2019-03-19 19:19:40.210 org.springframework.boot.diagnostics.LoggingFailureAnalysisReporter ERROR - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field hikvisionService in com.jxbd.hikvision.ApplicationAutoRunner required a bean of type 'com.jxbd.hikvision.population.density.HikvisionService' that could not be found.
+
+
+Action:
+
+Consider defining a bean of type 'com.jxbd.hikvision.population.density.HikvisionService' in your configuration.
+
