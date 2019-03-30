@@ -7,15 +7,13 @@ import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.stereotype.Component;
 
-import java.util.ArrayList;
-import java.util.List;
-
 /**
- * 程序启动后初始化相关工作
+ * 程序启动后初始化海康摄像头的布防工作
  * @author Zitong Chen
  * @date 2019/3/16
  */
-@Component
+// 暂时取消自动初始化
+//@Component
 public class ApplicationAutoRunner implements ApplicationRunner {
 
     /**

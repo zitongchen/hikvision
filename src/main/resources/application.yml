@@ -1,9 +1,9 @@
 hikvision:
   arming:
-    ips: 192.168.4.27,192.168.11.105,192.168.11.106,192.168.11.208,192.168.11.209
+    ips: 192.168.4.27
     ipPort: 8000
     ipUserName: admin
-    ipPassword: kingxin2019
+    ipPassword: password
 server:
   port: 50000
   thymeleaf:

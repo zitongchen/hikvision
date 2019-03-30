@@ -1,4 +1,5 @@
 package com.jxbd.hikvision.population.density;
+
 import com.alibaba.fastjson.JSONObject;
 import com.sun.jna.Native;
 import com.sun.jna.NativeLong;
@@ -6,7 +7,6 @@ import com.sun.jna.Platform;
 import com.sun.jna.Pointer;
 import lombok.Data;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Component;
 
 import java.io.FileNotFoundException;
@@ -61,7 +61,7 @@ public class HikvisionService {
         String[] newRow = new String[3];
         //报警时间
         Date today = new Date();
-        DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
+        DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         String[] sIP = new String[2];
         //lCommand是传的报警类型
         switch (lCommand.intValue()) {
@@ -72,17 +72,23 @@ public class HikvisionService {
                 String[] jsonArr = jsonStr.split("\r\n\r\n");
                 String message = jsonArr[1];
                 JSONObject jsonObject = (JSONObject) JSONObject.parse(message);
+
+                // 封装提取到的信息
                 JSONObject data = new JSONObject();
                 data.put("ipAddress", jsonObject.getString("ipAddress"));
                 data.put("macAddress", jsonObject.getString("macAddress"));
-                data.put("dateTime", jsonObject.getString("dateTime"));
+                data.put("dateTime", dateFormat.format(new Date()));
                 data.put("eventType", jsonObject.getString("eventType"));
 
                 // 获取区域的人数
                 String count = jsonObject.getJSONObject("RegionCapture").getJSONObject("humanCounting").getString("count");
                 data.put("humanCount", count);
 
-                log.info("区域关注度摄像头信息入库信息：" + data);
+                // 获取区域的颜色信息，用于区分多个区域
+                String regionColor = jsonObject.getJSONObject("RegionCapture").getJSONObject("rule").getString("regionColor");
+                data.put("regionColor", regionColor);
+
+                log.info("区域关注度摄像头信息入库信息：" + data.toJSONString());
                 break;
             // 行为分析信息上传 在开发文档中的 NET_DVR_SetupAlarmChan_V50 有详细说明
             case HCNetSDK.COMM_ALARM_RULE:
@@ -92,46 +98,52 @@ public class HikvisionService {
                 pVcaInfo.write(0, pAlarmInfo.getByteArray(0, strVcaAlarm.size()), 0, strVcaAlarm.size());
                 strVcaAlarm.read();
 
+                JSONObject object = new JSONObject();
                 switch (strVcaAlarm.struRuleInfo.wEventTypeEx)
                 {
                     case 1:
-                        sAlarmType = sAlarmType + new String("：穿越警戒面") + ", " +
-                                "_wPort:" + strVcaAlarm.struDevInfo.wPort +
-                                "_byChannel:" + strVcaAlarm.struDevInfo.byChannel +
-                                "_byIvmsChannel:" +  strVcaAlarm.struDevInfo.byIvmsChannel +
-                                "_Dev IP：" + new String(strVcaAlarm.struDevInfo.struDevIP.sIpV4);
+                        object.put("title","穿越警戒面");
+                        object.put("eventType", strVcaAlarm.struRuleInfo.wEventTypeEx);
+                        object.put("ip",new String(strVcaAlarm.struDevInfo.struDevIP.sIpV4).split("\0", 2)[0]);
+                        object.put("port", strVcaAlarm.struDevInfo.wPort);
+                        object.put("date", dateFormat.format(new Date()));
                         break;
                     case 2:
-                        sAlarmType = sAlarmType + new String("：目标进入区域") + ", " +
-                                "_wPort:" + strVcaAlarm.struDevInfo.wPort +
-                                "_byChannel:" + strVcaAlarm.struDevInfo.byChannel +
-                                "_byIvmsChannel:" +  strVcaAlarm.struDevInfo.byIvmsChannel +
-                                "_Dev IP：" + new String(strVcaAlarm.struDevInfo.struDevIP.sIpV4);
+                        object.put("title","目标进入区域");
+                        object.put("eventType", strVcaAlarm.struRuleInfo.wEventTypeEx);
+                        object.put("ip",new String(strVcaAlarm.struDevInfo.struDevIP.sIpV4).split("\0", 2)[0]);
+                        object.put("port", strVcaAlarm.struDevInfo.wPort);
+                        object.put("date", dateFormat.format(new Date()));
+
                         break;
                     case 3:
-                        sAlarmType = sAlarmType + new String("：目标离开区域") + ", " +
-                                "_wPort:" + strVcaAlarm.struDevInfo.wPort +
-                                "_byChannel:" + strVcaAlarm.struDevInfo.byChannel +
-                                "_byIvmsChannel:" +  strVcaAlarm.struDevInfo.byIvmsChannel +
-                                "_Dev IP：" + new String(strVcaAlarm.struDevInfo.struDevIP.sIpV4);
+                        object.put("title","目标离开区域");
+                        object.put("eventType", strVcaAlarm.struRuleInfo.wEventTypeEx);
+                        object.put("ip",new String(strVcaAlarm.struDevInfo.struDevIP.sIpV4).split("\0", 2)[0]);
+                        object.put("port", strVcaAlarm.struDevInfo.wPort);
+                        object.put("date", dateFormat.format(new Date()));
+
                         break;
                     case 13:
-                        sAlarmType = sAlarmType + new String("：物品遗留") + ", " +
-                                "_wPort:" + strVcaAlarm.struDevInfo.wPort +
-                                "_byChannel:" + strVcaAlarm.struDevInfo.byChannel +
-                                "_byIvmsChannel:" +  strVcaAlarm.struDevInfo.byIvmsChannel +
-                                "_Dev IP：" + new String(strVcaAlarm.struDevInfo.struDevIP.sIpV4);
+                        object.put("title","物品遗留");
+                        object.put("eventType", strVcaAlarm.struRuleInfo.wEventTypeEx);
+                        object.put("ip",new String(strVcaAlarm.struDevInfo.struDevIP.sIpV4).split("\0", 2)[0]);
+                        object.put("port", strVcaAlarm.struDevInfo.wPort);
+                        object.put("date", dateFormat.format(new Date()));
+
                         break;
                     default:
-                        sAlarmType = sAlarmType + new String("：其他行为分析报警，事件类型：")
-                                + strVcaAlarm.struRuleInfo.wEventTypeEx +
-                                "_wPort:" + strVcaAlarm.struDevInfo.wPort +
-                                "_byChannel:" + strVcaAlarm.struDevInfo.byChannel +
-                                "_byIvmsChannel:" +  strVcaAlarm.struDevInfo.byIvmsChannel +
-                                "_Dev IP：" + new String(strVcaAlarm.struDevInfo.struDevIP.sIpV4);
+                        object.put("title","其他行为分析报警");
+                        object.put("eventType", strVcaAlarm.struRuleInfo.wEventTypeEx);
+                        object.put("ip",new String(strVcaAlarm.struDevInfo.struDevIP.sIpV4).split("\0", 2)[0]);
+                        object.put("port", strVcaAlarm.struDevInfo.wPort);
+                        object.put("date", dateFormat.format(new Date()));
                         break;
                 }
-                System.out.println(sAlarmType);
+
+                System.out.println(object.toJSONString());
+
+                // 输出照片
                 newRow[0] = dateFormat.format(today);
                 //报警类型
                 newRow[1] = sAlarmType;
